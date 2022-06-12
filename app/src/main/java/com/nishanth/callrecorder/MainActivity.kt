@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         binding.callBtn.setOnClickListener {
             callNumber(mainViewModel.contact?.value!!.phoneNumber)
         }
-        requestContactsPermission()
+        requestPermissions()
     }
 
 
@@ -109,7 +109,7 @@ class MainActivity : AppCompatActivity() {
                 PackageManager.PERMISSION_GRANTED
     }
 
-    private fun requestContactsPermission() {
+    private fun requestPermissions() {
         if (!hasContactsPermission()) {
             ActivityCompat.requestPermissions(
                 this,
